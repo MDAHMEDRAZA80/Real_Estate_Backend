@@ -34,6 +34,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
+  console.log(req.body)
   signupModal.find({ email: req.body.email }).then((data) => {
     if (data.length) {
       res.status(400).send("User already exists!");
