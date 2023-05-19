@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const userController = require("./Routes/userRoute");
-const signupLoginController = require("./Routes/signupLoginRoute");
+const userController = require("./Route/userRoute");
+const signupLoginController = require("./Route/signupLoginRoute");
 const port = 3500;
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -10,7 +10,7 @@ require("dotenv").config();
 // const DB = "mongodb+srv://ahmed:ahmed123@cluster0.cmzqp4h.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(
-  process.env.MONGO_URI,
+  process.env.MongoUrl,
   () => {
     console.log("Successfully connected to database!");
   },
